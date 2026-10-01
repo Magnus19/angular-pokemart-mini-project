@@ -1,16 +1,40 @@
-html,
-body {
-  margin: 0;
-  min-height: 100%;
-  background: #020b14;
-  color: #edf6ff;
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  color-scheme: light;
+  --canvas: #f4f5ee;
+  --paper: #fffefa;
+  --ink: #203331;
+  --muted: #687570;
+  --line: #d9dfd8;
+  --coral: #c7473c;
+  --teal: #16776e;
+  --gold: #f2c04f;
+  --display-font: Georgia, 'Times New Roman', serif;
 }
 
 * {
   box-sizing: border-box;
 }
 
-a {
-  color: inherit;
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: var(--canvas);
+  background-image: radial-gradient(#dfe4da 0.7px, transparent 0.7px);
+  background-size: 18px 18px;
+  color: var(--ink);
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
 }
