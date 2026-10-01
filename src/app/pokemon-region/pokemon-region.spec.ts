@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { PokemonRegion } from './pokemon-region';
+import { PokemonRegionComponent } from './pokemon-region';
 
 describe('PokemonRegion', () => {
-  let component: PokemonRegion;
-  let fixture: ComponentFixture<PokemonRegion>;
+  let component: PokemonRegionComponent;
+  let fixture: ComponentFixture<PokemonRegionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PokemonRegion],
+      imports: [PokemonRegionComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PokemonRegion);
+    fixture = TestBed.createComponent(PokemonRegionComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

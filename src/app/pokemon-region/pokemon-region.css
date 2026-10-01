@@ -1,0 +1,68 @@
+.region-page {
+  padding: 28px 0 56px;
+}
+
+.region-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #d9dfd8;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #c7473c;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.region-heading h1 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2.5rem;
+}
+
+.region-heading p:not(.eyebrow) {
+  margin: 8px 0 0;
+  color: #687570;
+}
+
+.entry-count {
+  flex: none;
+  border-left: 3px solid #f2c04f;
+  padding: 6px 0 6px 12px;
+  color: #687570;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.selection-message {
+  color: #16776e;
+  font-weight: 700;
+}
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 760px) {
+  .pokemon-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .region-heading {
+    align-items: flex-start;
+  }
+
+  .region-heading h1 {
+    font-size: 2rem;
+  }
+}

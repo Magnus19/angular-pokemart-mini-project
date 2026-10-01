@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Pokemart } from './pokemart';
+import { PokemartComponent } from './pokemart';
 
-describe('Pokemart', () => {
-  let component: Pokemart;
-  let fixture: ComponentFixture<Pokemart>;
+describe('PokemartComponent', () => {
+  let component: PokemartComponent;
+  let fixture: ComponentFixture<PokemartComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Pokemart],
+      imports: [PokemartComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Pokemart);
+    fixture = TestBed.createComponent(PokemartComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

@@ -1,1 +1,20 @@
-<p>pokemon-region works!</p>
+<section class="region-page">
+  <header class="region-heading">
+    <div>
+      <p class="eyebrow">Trainer field guide / {{ region() }}</p>
+      <h1>{{ region() }} Pokémon</h1>
+      <p>Meet six Pokémon from the {{ region() }} region.</p>
+    </div>
+    <span class="entry-count">{{ pokemon().length }} entries</span>
+  </header>
+
+  @if (selectedPokemon(); as selected) {
+    <p class="selection-message" role="status">Selected {{ selected.name }}.</p>
+  }
+
+  <div class="pokemon-grid">
+    @for (entry of pokemon(); track entry.id) {
+      <app-pokemon-card [pokemon]="entry" (selected)="selectPokemon($event)" />
+    }
+  </div>
+</section>

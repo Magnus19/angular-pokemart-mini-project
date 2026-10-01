@@ -1,1 +1,102 @@
-<p>pokemart works!</p>
+<section class="mart-page">
+  <header class="mart-heading">
+    <div>
+      <p class="eyebrow">Trainer supplies</p>
+      <h1>PokéMart</h1>
+      <p>Stock up before your next journey.</p>
+    </div>
+  </header>
+
+  <div class="mart-layout">
+    <section class="catalog" aria-labelledby="catalog-title">
+      <div class="section-title">
+        <h2 id="catalog-title">Popular items</h2>
+        <span>{{ pokemonService.products.length }} supplies</span>
+      </div>
+
+      <div class="product-list">
+        @for (product of pokemonService.products; track product.id) {
+          <article class="product">
+            <span class="product-icon" aria-hidden="true">{{ product.icon }}</span>
+            <div class="product-info">
+              <h3>{{ product.name }}</h3>
+              <p>{{ product.description }}</p>
+            </div>
+            <div class="product-action">
+              <strong>{{ formatPrice(product.price) }}</strong>
+              <button
+                type="button"
+                (click)="pokemonService.addToCart(product.id)"
+                [attr.aria-label]="'Add ' + product.name + ' to cart'"
+              >
+                Add
+              </button>
+            </div>
+          </article>
+        }
+      </div>
+    </section>
+
+    <aside class="cart-panel" aria-labelledby="cart-title">
+      <div class="section-title">
+        <h2 id="cart-title">Your cart</h2>
+        <span>{{ pokemonService.cartCount() }} items</span>
+      </div>
+
+      @if (pokemonService.cart().length === 0) {
+        <p class="empty-cart">Your cart is empty. Add some travel essentials.</p>
+      } @else {
+        <ul class="cart-list">
+          @for (item of pokemonService.cart(); track item.id) {
+            <li class="cart-item">
+              <span aria-hidden="true">{{ item.icon }}</span>
+              <div class="cart-item-info">
+                <strong>{{ item.name }}</strong>
+                <span>{{ formatPrice(item.price) }} each</span>
+              </div>
+              <div class="quantity-controls">
+                <button
+                  type="button"
+                  (click)="pokemonService.removeOne(item.id)"
+                  [attr.aria-label]="'Remove one ' + item.name"
+                >
+                  −
+                </button>
+                <span>{{ item.quantity }}</span>
+                <button
+                  type="button"
+                  (click)="pokemonService.addToCart(item.id)"
+                  [attr.aria-label]="'Add one ' + item.name"
+                >
+                  +
+                </button>
+              </div>
+              <button
+                class="remove-button"
+                type="button"
+                (click)="pokemonService.removeItem(item.id)"
+                [attr.aria-label]="'Remove ' + item.name + ' from cart'"
+              >
+                Remove
+              </button>
+            </li>
+          }
+        </ul>
+      }
+
+      <div class="cart-total">
+        <span>Total</span>
+        <strong>{{ formatPrice(pokemonService.cartTotal()) }}</strong>
+      </div>
+
+      <button
+        class="clear-button"
+        type="button"
+        (click)="pokemonService.clearCart()"
+        [disabled]="pokemonService.cart().length === 0"
+      >
+        Clear cart
+      </button>
+    </aside>
+  </div>
+</section>

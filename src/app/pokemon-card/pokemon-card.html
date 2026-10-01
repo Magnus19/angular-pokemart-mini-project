@@ -1,1 +1,16 @@
-<p>pokemon-card works!</p>
+<article class="pokemon-card">
+  <div class="pokemon-art">
+    <img [src]="image()" [alt]="pokemon().name" loading="lazy" />
+    <span>No. {{ pokemon().id }}</span>
+  </div>
+
+  <div class="pokemon-details">
+    <p class="region">{{ pokemon().region }} region</p>
+    <h2>{{ pokemon().name }}</h2>
+    <p><strong>Type:</strong> {{ pokemon().type }}</p>
+    <p><strong>Held item:</strong> {{ pokemon().heldItem }}</p>
+    <p class="description">{{ pokemon().description }}</p>
+
+    <button type="button" (click)="selected.emit(pokemon())">Select Pokémon</button>
+  </div>
+</article>
