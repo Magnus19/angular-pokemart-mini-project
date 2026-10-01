@@ -1,30 +1,30 @@
 .top-nav {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  padding: 1rem 2rem;
-  background: #020b14;
-  border-bottom: 2px solid rgba(148, 163, 184, 0.35);
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e0e6e1;
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
 .top-nav a {
-  color: #e2e8f0;
+  color: #293a35;
   text-decoration: none;
-  padding: 0.75rem 1rem;
-  border-radius: 999px;
+  padding: 0.65rem 0.9rem;
+  border-radius: 4px;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   transition:
     background 0.2s ease,
     color 0.2s ease;
 }
 
+.top-nav a:hover,
 .top-nav a.active {
-  background: rgba(96, 165, 250, 0.18);
-  color: #f8fafc;
-  box-shadow: inset 0 0 0 1px rgba(96, 165, 250, 0.35);
+  background: #e8f1ed;
+  color: #28796f;
 }

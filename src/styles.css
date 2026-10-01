@@ -1,13 +1,13 @@
 :root {
   color-scheme: light;
-  --canvas: #f4f5ee;
-  --paper: #fffefa;
-  --ink: #203331;
-  --muted: #687570;
-  --line: #d9dfd8;
-  --coral: #c7473c;
-  --teal: #16776e;
-  --gold: #f2c04f;
+  --canvas: #f8faf7;
+  --paper: #ffffff;
+  --ink: #293a35;
+  --muted: #697771;
+  --line: #e0e6e1;
+  --coral: #bd5147;
+  --teal: #28796f;
+  --gold: #e8bd58;
   --display-font: Georgia, 'Times New Roman', serif;
 }
 
@@ -22,9 +22,7 @@ body {
 }
 
 body {
-  background-color: var(--canvas);
-  background-image: radial-gradient(#dfe4da 0.7px, transparent 0.7px);
-  background-size: 18px 18px;
+  background: var(--canvas);
   color: var(--ink);
   font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
 }
